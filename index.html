@@ -1,0 +1,36 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Wirestorm Products</title>
+    <script type="text/javascript" src="./bower_components/angular/angular.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body ng-app='wireStorm'>
+    <div ng-controller="productsCtrl" ng-init="showDetail=false">
+        <h1>My Products</h1>
+        <div ng-repeat="product in products | orderBy: 'name'">
+            <p>
+            	<a href ng-click="showDetail= !showDetail; getComments(product.id);"><strong>Name:</strong> {{ product.name }}</a>
+            	<div ng-if="showDetail==true">
+            		<p>product name: <b>{{product.name}}</b></p>
+            		<p><strong>Description:</strong> {{ product.description | lowercase }}</p>
+            		<p><strong>Price: {{ product.price | currency:"USD$":0 }}</strong></p>
+            		<form name="commentForm">
+            			<input ng-model="comment" placeholder="enter comment"><br>
+            			<input type="submit" ng-click="submit(comment, product.id)" value="submit" />
+        			</form>
+            		<p>Comments: </p>
+            		<ul>
+            			<li ng-repeat="comment in comments">{{ comment.text }}</li>
+        			</ul>
+            	</div>
+            </p>
+            
+            
+        <hr>
+        </div>
+
+    </div>  
+    <script type="text/javascript" src="./app.js"></script>
+</body>
+</html>

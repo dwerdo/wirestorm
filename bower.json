@@ -1,0 +1,19 @@
+{
+  "name": "wirestorm",
+  "version": "0.0.0",
+  "homepage": "https://github.com/dwerdo/wirestorm",
+  "authors": [
+    "dwerdo <mr.edhuang@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "~1.4.3"
+  }
+}
