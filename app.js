@@ -22,8 +22,4 @@ controller('productsCtrl', function($scope, $http) {
 			$scope.comments = angular.copy(response.data);
 		});
 	}
-
-	$scope.setComment = function(id) {
-
-	}
 });
